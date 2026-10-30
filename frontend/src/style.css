@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #edf2f7;
+  background: #0c1320;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  font-smooth: always;
+  --muted: #93a0b4;
+  --line: #263448;
+  --panel: #121e2d;
+  --accent: #8ee3c0;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+button, textarea { font: inherit; }
+button { cursor: pointer; }
+.page-shell { width: min(920px, calc(100% - 40px)); margin: 0 auto; padding: 28px 0 26px; }
+.topbar { display: flex; justify-content: space-between; align-items: center; }
+.brand { display: inline-flex; align-items: center; gap: 11px; color: #f7fafc; text-decoration: none; font-weight: 700; letter-spacing: -0.03em; }
+.brand-mark { display: grid; width: 34px; height: 34px; place-items: center; color: #0c1b20; background: var(--accent); border-radius: 11px; font-weight: 700; }
+.status { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font: 12px 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .06em; }
+.status-dot { width: 8px; height: 8px; border-radius: 50%; background: #778399; }
+.status-online .status-dot { background: #6fe0aa; }
+.status-offline .status-dot { background: #ff7f86; }
+.hero { padding: 76px 0 38px; max-width: 690px; }
+.eyebrow { margin: 0 0 11px; color: var(--accent); font: 11px 'DM Mono', monospace; letter-spacing: .15em; }
+h1 { margin: 0; color: #f7fafc; font-size: clamp(42px, 8vw, 68px); line-height: 1.02; letter-spacing: -.065em; }
+.subtitle { max-width: 630px; margin: 19px 0 18px; color: #aab6c6; font-size: 16px; line-height: 1.7; }
+.mode-note { display: inline-flex; padding: 8px 11px; border: 1px solid var(--line); border-radius: 999px; font: 11px 'DM Mono', monospace; }
+.mode-demo { color: #f4cb82; background: #312718; border-color: #58452a; }
+.mode-live { color: #8ee3c0; background: #17342c; border-color: #285846; }
+.workspace { overflow: hidden; border: 1px solid #2a3a4e; border-radius: 19px; background: #101b29; box-shadow: 0 24px 70px #0003; }
+.workspace-heading { display: flex; justify-content: space-between; align-items: center; padding: 21px 24px; border-bottom: 1px solid var(--line); }
+.workspace-heading .eyebrow { margin-bottom: 5px; }
+h2 { margin: 0; font-size: 18px; letter-spacing: -.02em; }
+.clear-button { padding: 7px 11px; border: 1px solid var(--line); border-radius: 8px; color: #c1ccda; background: transparent; font-size: 12px; }
+.empty-state { min-height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 34px 24px; text-align: center; }
+.spark { display: grid; width: 42px; height: 42px; margin-bottom: 12px; place-items: center; border-radius: 13px; color: var(--accent); background: #1d3b36; font-size: 23px; }
+h3 { margin: 0; font-size: 17px; }
+.empty-state > p { margin: 8px 0 21px; color: var(--muted); font-size: 13px; }
+.suggestions { display: grid; width: min(100%, 570px); gap: 8px; }
+.suggestion { padding: 11px 13px; border: 1px solid var(--line); border-radius: 9px; color: #c1ccda; background: #142233; text-align: left; font-size: 12px; line-height: 1.5; }
+.suggestion:hover { border-color: #5d9d89; color: #f7fafc; }
+.conversation { display: grid; gap: 15px; max-height: 430px; overflow-y: auto; padding: 22px 24px; }
+.message { max-width: 88%; padding: 13px 15px; border: 1px solid var(--line); border-radius: 12px; }
+.message-user { justify-self: end; background: #18372f; border-color: #285846; }
+.message-assistant { justify-self: start; background: #172435; }
+.message-label { margin-bottom: 7px; color: var(--accent); font: 10px 'DM Mono', monospace; letter-spacing: .1em; }
+.message p { margin: 0; white-space: pre-wrap; font-size: 13px; line-height: 1.65; }
+.thinking { color: var(--muted); font-size: 12px; }
+.error-message { margin: 0; padding: 0 24px 12px; color: #ff9a9f; font-size: 12px; }
+.prompt-form { margin: 0 17px 17px; padding: 12px; border: 1px solid #34465c; border-radius: 13px; background: #0c1724; }
+.prompt-form textarea { display: block; width: 100%; resize: vertical; min-height: 74px; border: 0; outline: 0; color: #edf2f7; background: transparent; font-size: 13px; line-height: 1.6; }
+.prompt-form textarea::placeholder { color: #738198; }
+.form-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 9px; color: #76859b; font: 10px 'DM Mono', monospace; }
+.send-button { display: inline-flex; align-items: center; gap: 12px; padding: 9px 13px; border: 0; border-radius: 8px; color: #10231d; background: var(--accent); font-size: 12px; font-weight: 700; }
+.send-button:disabled { cursor: not-allowed; opacity: .45; }
+.footer { padding: 20px 0 0; color: #728096; text-align: center; font-size: 11px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+
+@media (max-width: 620px) {
+  .page-shell { width: min(100% - 24px, 920px); padding-top: 17px; }
+  .hero { padding-top: 55px; }
+  .workspace-heading { padding: 17px; }
+  .empty-state { padding: 29px 15px; }
+  .conversation { padding: 17px 14px; }
+  .message { max-width: 96%; }
+  .prompt-form { margin: 0 10px 10px; }
+}
