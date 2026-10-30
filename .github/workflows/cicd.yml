@@ -161,7 +161,7 @@ jobs:
               "set -eu",
               "mkdir -p /opt/promptpad",
               ("printf %s " + ($compose_b64 | @sh) + " | base64 -d > /opt/promptpad/compose.prod.yaml"),
-              ("cd /opt/promptpad && export IMAGE_PREFIX=" + ($image_prefix | @sh) + " IMAGE_TAG=" + ($image_tag | @sh) + " && docker compose -f compose.prod.yaml pull && docker compose -f compose.prod.yaml up -d --remove-orphans && curl --fail --silent --show-error http://127.0.0.1/api/health")
+              ("cd /opt/promptpad && export IMAGE_PREFIX=" + ($image_prefix | @sh) + " IMAGE_TAG=" + ($image_tag | @sh) + " && docker compose -f compose.prod.yaml pull && docker compose -f compose.prod.yaml up -d --remove-orphans --wait --wait-timeout 120 && curl --fail --silent --show-error http://127.0.0.1/api/health")
             ]')"
 
           PARAMETERS="$(jq -cn --argjson commands "$COMMANDS" '{commands: $commands}')"
