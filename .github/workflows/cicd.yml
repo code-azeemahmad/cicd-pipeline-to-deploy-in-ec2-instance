@@ -37,7 +37,7 @@ jobs:
 
       - name: Test backend
         working-directory: backend
-        run: pytest
+        run: python -m pytest
 
   validate-frontend:
     name: Validate frontend
