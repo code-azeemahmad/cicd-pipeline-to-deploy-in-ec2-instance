@@ -28,4 +28,8 @@ services:
       api:
         condition: service_healthy
     ports:
-      - "8080:80"
+      - "80:80"
+      - "443:443"            # new
+    volumes:                 # new
+      - /var/www/certbot:/var/www/certbot
+      - /etc/letsencrypt:/etc/letsencrypt:ro
